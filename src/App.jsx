@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -57,16 +57,16 @@ function App() {
     'Black Mirror',
   ]);
 
-  // useEffect(() => {
-  //   localStorage.setItem('films', JSON.stringify(films));
-  // }, [films]);
+  useEffect(() => {
+    localStorage.setItem('films', JSON.stringify(films));
+  }, [films]);
 
-  // useEffect(() => {
-  //   const films = JSON.parse(localStorage.getItem('films'));
-  //   if (films) {
-  //     setFilms(films);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const films = JSON.parse(localStorage.getItem('films'));
+    if (films) {
+      setFilms(films);
+    }
+  }, []);
 
   const [selectedFilm, setSelectedFilm] = useState('');
 
